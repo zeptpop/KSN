@@ -1,7 +1,7 @@
 # KSN
 Software Defined Radio
 
-# Mitglieder:
+## Mitglieder:
 
 Bhuiyan Rifaz
 
