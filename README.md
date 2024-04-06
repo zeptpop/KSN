@@ -1,10 +1,12 @@
 # KSN
 Software Defined Radio
 
-Mitglieder:
+# Mitglieder:
 
 Bhuiyan Rifaz
+
 Culap Paul
+
 Garcia Sharon
 
 
