@@ -31,6 +31,7 @@ GRC ist eine grafische Benutzeroberfläche, die mit GNU Radio geliefert wird und
 * Ziehen Sie einen File Source-Block in das Hauptfenster von GRC. Dieser Block liest die Audiodatei vom Lehrer,
 * Ziehen Sie einen Multiply-Block mit einem Signal Source-Block, um den gewünschten Radiosender in die Mitte des Spektrums zu schieben.
 * Ziehen Sie einen Frequency Sink-Block und einen Waterfall Sink-Block in das Fenster, um die Spektralanzeige und das Wasserfalldiagramm zu visualisieren.
+* Ziehen Sie einen QT GUI Range-Block, damit die Frequenz beim Signal Source und bei den Sinks verändert wird.
 * Ziehen Sie einen Low Pass Filter-Block in das Fenster, um die Signale zu trennen.
 * Ziehen Sie einen WBFM Receive-Block in das Fenster. Dieser Block demoduliert das FM-Signal.
 * Ziehen Sie einen Audio Sink-Block in das Fenster, um das demodulierte Audio abzuspielen.
@@ -39,7 +40,7 @@ Verbinden Sie die Blöcke entsprechend, um das Flussdiagramm zu vervollständige
 
 **Schritt 4: Konfigurieren Sie die Parameter**
 
-Stellen Sie sicher, dass die Parameter der Blöcke korrekt konfiguriert sind. Konfigurieren Sie den Tiefpassfilter mit einer Grenzfrequenz von ca. 40 kHz.
+Stellen Sie sicher, dass die Parameter der Blöcke korrekt konfiguriert sind. Konfigurieren Sie den Tiefpassfilter mit einer Grenzfrequenz von ca. 40 kHz. Beim QT GUI Range-Block soll die Mittenfrequenz von 91 MHz gesetzt werden. [Start: 88.5M (-2.5M), Stop:93.5M(+2.5M)]. Auch die Samplerate von 5 MHz ist bei allen drei Sinks und beim Tiefpassfilter einzustellen.
 
 ### Was sollte herauskommen:
 
