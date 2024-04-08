@@ -46,4 +46,7 @@ Stellen Sie sicher, dass die Parameter der Blöcke korrekt konfiguriert sind. Ko
 Nachdem Sie das Flussdiagramm erstellt und die Parameter konfiguriert haben, sollten Sie in der Lage sein, den FM-Receiver auszuführen. Das Ergebnis sollte ein hörbares Audioausgangssignal sein, das den Radiosender wiedergibt, den Sie ausgewählt haben.
 
 ## Screenshots:
+![Flowgraph](/Bilder/flowgraph.png)
+
+![listen radio](/Bilder/frequency_range_waterfall_sink.png)
 
