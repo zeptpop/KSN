@@ -1,5 +1,5 @@
 # KSN
-Software Defined Radio: FM-Receiver
+Software Defined Radio: FM-Radioempfänger
 
 ## Mitglieder:
 
@@ -10,8 +10,7 @@ Culap Paul
 Garcia Sharon
 
 ## Beschreibung:
-Ein FM-Receiver (Frequency Modulation Receiver) ist ein Gerät, das Radiosignale empfängt, die mit der Frequenzmodulationstechnik übertragen werden. Diese Signale werden typischerweise von Radiosendern ausgestrahlt und enthalten Audiosignale wie Musik, Sprache usw.
-
+Ein FM-Radioempfänger empfängt Signale, die mit der Frequenzmodulation (FM) moduliert sind. In FM-Radiosendern wird die Information durch die Änderung der Frequenz des Trägersignals übertragen. Der Empfänger muss dieses modulierte Signal demodulieren, um die ursprüngliche Information (z. B. Musik oder Sprache) wiederherzustellen.
 ## Anleitung:
 
 ### Was ist GNU Radio?
@@ -25,12 +24,12 @@ Zuerst müssen Sie GNU Radio auf Ihrem Computer installieren. Anweisungen zur In
 
 **Schritt 2: Öffnen Sie GNU Radio Companion (GRC)**
 
-GRC ist eine grafische Benutzeroberfläche, die mit GNU Radio geliefert wird und es Ihnen ermöglicht, Fließdiagramme für die Signalverarbeitung zu erstellen.
+GRC ist eine grafische Benutzeroberfläche, die mit GNU Radio geliefert wird und es ermöglicht, Fließdiagramme für die Signalverarbeitung zu erstellen.
 
 **Schritt 3: Erstellen Sie das Empfänger-Flussdiagramm**
 
 * Ziehen Sie einen File Source-Block in das Hauptfenster von GRC. Dieser Block liest die Audiodatei vom Lehrer.
-* Ziehen Sie einen Frequency Translating FIR Filter-Block in das Fenster. Konfigurieren Sie den Tiefpassfilter mit einer Grenzfrequenz von etwa 40 kHz.
+* Ziehen Sie einen Low Pass Filter-Block in das Fenster. Konfigurieren Sie den Tiefpassfilter mit einer Grenzfrequenz von etwa 40 kHz.
 * Ziehen Sie einen WBFM Receive-Block in das Fenster. Dieser Block demoduliert das FM-Signal.
 * Ziehen Sie einen Audio Sink-Block in das Fenster, um das demodulierte Audio abzuspielen.
 * Ziehen Sie einen Frequency Sink-Block und einen Waterfall Sink-Block in das Fenster, um die Spektralanzeige und das Wasserfalldiagramm zu visualisieren.
