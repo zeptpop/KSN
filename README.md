@@ -37,7 +37,7 @@ Verbinden Sie die Blöcke entsprechend, um das Flussdiagramm zu vervollständige
 **Schritt 4: Konfigurieren Sie die Parameter**
 
 Stellen Sie sicher, dass die Parameter der Blöcke korrekt konfiguriert sind. Konfigurieren Sie den Tiefpassfilter mit einer Grenzfrequenz von ca. 40 kHz.
-## Was sollte herauskommen:
+**Was sollte herauskommen**:
 
 Nachdem Sie das Flussdiagramm erstellt und die Parameter konfiguriert haben, sollten Sie in der Lage sein, den FM-Receiver auszuführen. Das Ergebnis sollte ein hörbares Audioausgangssignal sein, das den Radiosender wiedergibt, den Sie ausgewählt haben.
 
