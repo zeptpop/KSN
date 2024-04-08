@@ -28,11 +28,12 @@ GRC ist eine grafische Benutzeroberfläche, die mit GNU Radio geliefert wird und
 
 **Schritt 3: Erstellen Sie das Empfänger-Flussdiagramm**
 
-* Ziehen Sie einen File Source-Block in das Hauptfenster von GRC. Dieser Block liest die Audiodatei vom Lehrer.
-* Ziehen Sie einen Low Pass Filter-Block in das Fenster. Konfigurieren Sie den Tiefpassfilter mit einer Grenzfrequenz von etwa 40 kHz.
+* Ziehen Sie einen File Source-Block in das Hauptfenster von GRC. Dieser Block liest die Audiodatei vom Lehrer,
+* Ziehen Sie einen Multiply-Block mit einem Signal Source-Block, um den gewünschten Radiosender in die Mitte des Spektrums zu schieben.
+* Ziehen Sie einen Frequency Sink-Block und einen Waterfall Sink-Block in das Fenster, um die Spektralanzeige und das Wasserfalldiagramm zu visualisieren.
+* Ziehen Sie einen Low Pass Filter-Block in das Fenster, um die Signale zu trennen.
 * Ziehen Sie einen WBFM Receive-Block in das Fenster. Dieser Block demoduliert das FM-Signal.
 * Ziehen Sie einen Audio Sink-Block in das Fenster, um das demodulierte Audio abzuspielen.
-* Ziehen Sie einen Frequency Sink-Block und einen Waterfall Sink-Block in das Fenster, um die Spektralanzeige und das Wasserfalldiagramm zu visualisieren.
 
 Verbinden Sie die Blöcke entsprechend, um das Flussdiagramm zu vervollständigen.
 
