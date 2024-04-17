@@ -46,5 +46,5 @@ Nachdem Sie das Flussdiagramm erstellt und die Parameter konfiguriert haben, sol
 
 ## Screenshots:
 ![flow](/Bilder/flowgraph2.png)
-![radio](/Bilder/frequency_range_waterfall_sink_2.png)
+![radio](/Bilder/frequency_range_waterfall_sink2.png)
 
