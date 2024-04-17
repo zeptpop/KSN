@@ -2,45 +2,43 @@
 Software Defined Radio: FM-Radioempfänger
 
 ## Mitglieder:
-
-Bhuiyan Rifaz
-
-Culap Paul
-
 Garcia Sharon
 
 ## Beschreibung:
 Ein FM-Radioempfänger empfängt Signale, die mit der Frequenzmodulation (FM) moduliert sind. In FM-Radiosendern wird die Information durch die Änderung der Frequenz des Trägersignals übertragen. Der Empfänger muss dieses modulierte Signal demodulieren, um die ursprüngliche Information (z. B. Musik oder Sprache) wiederherzustellen.
-## Anleitung:
-
-### Was ist GNU Radio?
-
-GNU Radio ist eine kostenlose und Open-Source-Software-Entwicklungstoolbox, die es ermöglicht, Software-Defined Radio (SDR) Systeme zu erstellen. Mit GNU Radio können Benutzer Signale digital verarbeiten und Funkanwendungen entwickeln.
 
 ### Aufbau des FM-Receivers:
-**Schritt 1: Installation von GNU Radio**
 
-Zuerst müssen Sie GNU Radio auf Ihrem Computer installieren. Anweisungen zur Installation finden Sie auf der offiziellen Website von GNU Radio.
+Um diesen FM-Radioempfänger zu bauen, verwenden wir verschiedene Blöcke in GNU Radio, die jeweils eine spezifische Funktion erfüllen:
 
-**Schritt 2: Öffnen Sie GNU Radio Companion (GRC)**
+1. **File Source Block:**
+   - Dieser Block wird verwendet, um die Datendatei "radio.dat" einzulesen, die die Radiosignale enthält.
 
-GRC ist eine grafische Benutzeroberfläche, die mit GNU Radio geliefert wird und es ermöglicht, Fließdiagramme für die Signalverarbeitung zu erstellen.
+2. **Signal Source Block:**
+   - Dieser Block erzeugt ein Sinuswellensignal mit der Mittenfrequenz des Empfängers (91 MHz), das als Referenzsignal für die Modulation dient.
 
-**Schritt 3: Erstellen Sie das Empfänger-Flussdiagramm**
+3. **Multiply Block:**
+   - Dieser Block moduliert das empfangene Signal mit dem Referenzsignal, um das Signal für die Frequenzverschiebung vorzubereiten.
 
-* Ziehen Sie einen File Source-Block in das Hauptfenster von GRC. Dieser Block liest die Audiodatei vom Lehrer,
-* Ziehen Sie einen Multiply-Block mit einem Signal Source-Block, um den gewünschten Radiosender in die Mitte des Spektrums zu schieben.
-* Ziehen Sie einen Frequency Sink-Block und einen Waterfall Sink-Block in das Fenster, um die Spektralanzeige und das Wasserfalldiagramm zu visualisieren.
-* Ziehen Sie einen QT GUI Range-Block, damit die Frequenz beim Signal Source und bei den Sinks verändert wird.
-* Ziehen Sie einen Low Pass Filter-Block in das Fenster, um die Signale zu trennen.
-* Ziehen Sie einen WBFM Receive-Block in das Fenster. Dieser Block demoduliert das FM-Signal.
-* Ziehen Sie einen Audio Sink-Block in das Fenster, um das demodulierte Audio abzuspielen.
+4. **Low Pass Filter Block:**
+   - Dieser Block filtert hochfrequente Komponenten des Signals heraus und trennt die gewünschten Signale von den unerwünschten. Der Filter wird vor dem Demodulator platziert.
 
-Verbinden Sie die Blöcke entsprechend, um das Flussdiagramm zu vervollständigen.
+5. **WBFM Receive Block:**
+   - Dieser Block demoduliert das FM-Signal und extrahiert das Audiosignal. Wir verwenden den "WBFM Receive" Block für die Breitband-FM-Demodulation.
 
-**Schritt 4: Konfigurieren Sie die Parameter**
+6. **Audio Sink Block:**
+   - Dieser Block gibt das demodulierte Audiosignal über die Soundkarte wieder, sodass es über Lautsprecher gehört werden kann.
 
-Stellen Sie sicher, dass die Parameter der Blöcke korrekt konfiguriert sind. Konfigurieren Sie den Tiefpassfilter mit einer Grenzfrequenz von ca. 40 kHz. Beim QT GUI Range-Block soll die Mittenfrequenz von 91 MHz gesetzt werden. [Start: 88.5M (-2.5M), Stop:93.5M(+2.5M)]. Auch die Samplerate von 5 MHz ist bei allen drei Sinks und beim Tiefpassfilter einzustellen.
+7. **Frequency und Waterfall Sink Blocks:**
+   - Diese Blöcke dienen dazu, das Eingangssignal zu visualisieren und dessen Frequenzspektrum darzustellen.
+
+Bei der Bestimmung der Parameter wie Gain, Decimation usw. müssen wir die Eigenschaften des Signals, die Systemanforderungen und die Hardwarekonfiguration berücksichtigen:
+
+- Der Gain-Parameter beim Low Pass Filter bestimmt die Verstärkung des Filters und sollte so eingestellt werden, dass das Signal angemessen verstärkt wird, ohne zu übersteuern oder zu schwach zu sein.
+- Die Decimation beim Low Pass Filter reduziert die Abtastrate des Signals und beeinflusst die Rechenleistung. Eine geeignete Decimation wird basierend auf der Abtastrate des Eingangssignals gewählt.
+- Die Audio-Decimation beim WBFM Receive Block bestimmt die Abtastrate des demodulierten Audiosignals und sollte so gewählt werden, dass das Audiosignal mit der gewünschten Qualität wiedergegeben wird.
+
+Durch die Auswahl und Anpassung dieser Parameter können wir einen funktionierenden FM-Radioempfänger in GNU Radio aufbauen und das gewünschte Radiosignal demodulieren und wiedergeben.
 
 ### Was sollte herauskommen:
 
